@@ -17,5 +17,5 @@ ADD ./UTC--2018-06-13T08-21-07.573900500Z--3837a575ea779373777f682b26cbb32d3a00d
 ADD ./accountpswd.txt /accountpswd.txt
 ADD ./run.sh /run.sh
 
-EXPOSE 8545 8546 30303 30303/udp
-#ENTRYPOINT ["geth"]
+EXPOSE 8546
+CMD ["/run.sh"]

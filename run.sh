@@ -17,10 +17,9 @@ then
   geth --datadir /datadir init /genesis.json
 
   echo "Writing start script"
-  #echo "geth --datadir /datadir --nousb --networkid 2814 --syncmode 'full' --gcmode 'archive' --identity '${HOSTNAME}' --ws --wsapi 'admin,debug,eth,miner,net,personal,shh,txpool,web3' --wsorigins '*' --ipcdisable --mine --minerthreads 1 --targetgaslimit 0 --gasprice '1' --unlock '0x${pubkey}' --password /accountpswd.txt" > /geth.sh
-  echo "geth --datadir /datadir --nousb --networkid 2814 --syncmode 'full' --gcmode 'archive' --identity '${HOSTNAME}' --ws --wsapi 'admin,debug,eth,miner,net,personal,shh,txpool,web3' --wsorigins '*' --ipcdisable --minerthreads 1 --targetgaslimit 0 --gasprice '1' --unlock '0x${pubkey}' --password /accountpswd.txt" > /geth.sh
+  echo "exec geth --datadir /datadir --nousb --networkid 2814 --syncmode 'full' --gcmode 'archive' --identity '${HOSTNAME}' --ws --wsapi 'admin,debug,eth,miner,net,personal,shh,txpool,web3' --wsorigins '*' --ipcdisable --mine --minerthreads 1 --targetgaslimit 0 --gasprice '1' --unlock '0x${pubkey}' --password /accountpswd.txt" > /geth.sh
   chmod +x /geth.sh
 fi
 
 echo "starting geth"
-/geth.sh
+exec /geth.sh
