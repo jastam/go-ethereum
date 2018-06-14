@@ -13,8 +13,6 @@ RUN apk add --no-cache ca-certificates
 COPY --from=builder /go-ethereum/build/bin/geth /usr/local/bin/
 
 ADD ./genesis.json.template /genesis.json.template
-ADD ./UTC--2018-06-13T08-21-07.573900500Z--3837a575ea779373777f682b26cbb32d3a00d8cb /UTC--2018-06-13T08-21-07.573900500Z--3837a575ea779373777f682b26cbb32d3a00d8cb
-ADD ./accountpswd.txt /accountpswd.txt
 ADD ./run.sh /run.sh
 
 EXPOSE 8546
