@@ -12,5 +12,8 @@ FROM alpine:latest
 RUN apk add --no-cache ca-certificates
 COPY --from=builder /go-ethereum/build/bin/geth /usr/local/bin/
 
+ADD ./run.sh /run.sh
+add ./rinkeby.json /rinkeby.json
+
 EXPOSE 8545 8546 30303 30303/udp
-ENTRYPOINT ["geth"]
+CMD ["/run.sh"]
